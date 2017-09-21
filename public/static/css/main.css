@@ -1,0 +1,23 @@
+.engage-option {
+	margin: 20px auto;
+	width: 300px;
+}
+.engage-box {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.engage-box hr {
+	border-color: #dbdbdb;
+}
+.option {
+	margin-left: 30px;
+}
+
+.video-box {
+	margin-top: 30px;
+}
+
+.next {
+	float: right;
+	margin-right: 30px;
+}

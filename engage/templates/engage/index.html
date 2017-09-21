@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+
+<title>
+Video Label
+</title> 
+
+<!-- Bootstrap CSS  -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{% static "js/main.js" %}"></script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<div class="video-box">
+			<video
+			    id="Video1"
+			    width="640"
+			    height="390"
+			    controls="controls">
+			    <source src="{{STATIC_URL}}/static/video/{{video_name}}">
+			    <!-- <source src="{% static "video/681_TV1.mov" %}"> -->
+			</video>
+			<div>
+			<form name="labelengage" method="post" action="{% url "index" %}">
+				{% csrf_token %}
+				<div class="engage-box">
+					<div class="engage-option">
+						<label class="radio">
+						  <input type="radio"  name="engageOptions" value="0" required> 0
+						</label>
+						<label class="radio">
+						  <input type="radio" name="engageOptions" value="1"> 1
+						</label>
+						<label class="radio">
+						  <input type="radio" name="engageOptions" value="2"> 2
+						</label>
+
+						<label class="radio">
+						  <input type="radio" name="engageOptions" value="3"> 3
+						</label>
+
+					</div>
+					<input type="hidden" name="video_id" value="{{video_id}}">
+				  <hr/>
+				  <button type="submit" id="create" class="btn btn-lg btn-success next">Next Video </button>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
